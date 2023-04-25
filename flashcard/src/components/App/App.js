@@ -1,23 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import Input from '../Input';
+
+const data = []
+let randomInteger;
+let titleValue;
+let factValue;
+
+function giveRandomInteger() {
+  // this function will give a random number between 0 and the length of the array
+  randomInteger = Math.floor(Math.random() * data.length);
+}
+
+function handleSubmit() {
+  // this function, when called, will add the value of Title and Fact to the end of the data array inside one object
+}
+
+function handleTitleChange() {
+  // this function will update the value of titleValue
+}
+
+function handleFactChange() {
+  // this function will update the value of factValue
+}
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Input titleValue={titleValue} factValue={factValue} handleSubmit={handleSubmit}/>
+      <Output />
     </div>
   );
 }

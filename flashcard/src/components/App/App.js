@@ -28,7 +28,7 @@ function handleTitleChange() {
 
 function handleFactChange() {
   // this function will update the value of factValue
-
+}
 // function for input value
 function inputField(event){
  

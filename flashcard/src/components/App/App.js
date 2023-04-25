@@ -1,27 +1,44 @@
-import './App.css';
-// imported useState from react
+import "./App.css";
+import React from "react";
+import Input from "../Input";
 import { useState } from 'react';
 
 // created state for input. Initally set as an empty string
 const [input, setInput] = useState('')
 const [quiz, setQuiz] = useState({})
 
+const data = [];
+let randomInteger;
+let titleValue;
+let factValue;
+
+
+function giveRandomInteger() {
+  // this function will give a random number between 0 and the length of the array
+  randomInteger = Math.floor(Math.random() * data.length);
+}
+
+function handleSubmit() {
+  // this function, when called, will add the value of Title and Fact to the end of the data array inside one object
+}
+
+function handleTitleChange() {
+  // this function will update the value of titleValue
+}
+
+function handleFactChange() {
+  // this function will update the value of factValue
+
 // function for input value
 function inputField(event){
-  
+ 
+// SAVING IN CASE IT IS NEEDED
   // set the state to the value of the input 
   setInput(event.target.value)
   // create a new array with the spread operator with the value of the input
   const quizArray = [...input] 
 }
-//create random number generator
-function randomNumberGenerator(quizArray){
-  // create a variable for the random number
-  //goes through array quizArray and pick a random number
-  const randomNum = Math.floor(Math.random() * quizArray.length)
-  // return the random number
-  return randomNum
-}
+
 
 function quizField(){
   setQuiz()
@@ -29,10 +46,15 @@ function quizField(){
 
 function App() {
   return (
-    <div>
-    <Form/>
-    <Quiz/>
-    <Display/>
+<div className="App">
+      <Input
+        titleValue={titleValue}
+        factValue={factValue}
+        handleSubmit={handleSubmit}
+      />
+      <Form/>
+      <Quiz/>
+      <Display/>
     </div>
   );
 }

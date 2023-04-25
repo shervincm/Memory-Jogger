@@ -1,6 +1,11 @@
 import "./App.css";
 import React from "react";
 import Input from "../Input";
+import { useState } from 'react';
+
+// created state for input. Initally set as an empty string
+const [input, setInput] = useState('')
+const [quiz, setQuiz] = useState({})
 
 const data = [];
 let randomInteger;
@@ -23,17 +28,33 @@ function handleTitleChange() {
 
 function handleFactChange() {
   // this function will update the value of factValue
+
+// function for input value
+function inputField(event){
+ 
+// SAVING IN CASE IT IS NEEDED
+  // set the state to the value of the input 
+  setInput(event.target.value)
+  // create a new array with the spread operator with the value of the input
+  const quizArray = [...input] 
+}
+
+
+function quizField(){
+  setQuiz()
 }
 
 function App() {
   return (
-    <div className="App">
+<div className="App">
       <Input
         titleValue={titleValue}
         factValue={factValue}
         handleSubmit={handleSubmit}
       />
-      <Output />
+      <Form/>
+      <Quiz/>
+      <Display/>
     </div>
   );
 }

@@ -1,23 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+// imported useState from react
+import { useState } from 'react';
+
+// created state for input. Initally set as an empty string
+const [input, setInput] = useState('')
+
+// function for input value
+function inputField(event){
+  
+  // set the state to the value of the input 
+  setInput(event.target.value)
+  // create a new array with the spread operator with the value of the input
+  const quizArray = [...input] 
+}
+
+function quizField(){
+  const [quiz, setQuiz] = useState({})
+  setQuiz 
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+    <Form/>
+    <Quiz/>
+    <Display/>
     </div>
   );
 }

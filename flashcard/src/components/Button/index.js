@@ -3,7 +3,7 @@ import React from 'react';
 function Button({ handleSubmit }) {
   return (
     <div>
-      <button onClick={handleSubmit}>Submit</button>
+      <button onClick={handleSubmit}>Add Flashcard</button>
     </div>
   );
 }

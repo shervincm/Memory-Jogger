@@ -13,20 +13,21 @@ useEffect(() => {
 function giveRandomInteger() {
     // this function will give a random number between 0 and the length of the array
     randomInteger = Math.floor(Math.random() * data.length);
-    setRandomInteger(randomInteger);
+    // setRandomInteger(randomInteger);
+    setRandomInteger(1);
   }
 
 //handleClick function 
 function handleClick(){
 giveRandomInteger()
-setQuiz({title: data[randomInteger].title, fact: data[randomInteger].fact})
+setQuiz({usertitle: data[randomInteger].usertitle, fact: data[randomInteger].fact})
     }
 
 
     return (
 //display title and fact of the object in the array at the index of the random integer
 <div>
-    <p>{quiz.title}</p>
+    <p>{quiz.usertitle}</p>
     <p>{quiz.fact}</p>
     <button onClick={handleClick}>Test Me</button>
 </div>

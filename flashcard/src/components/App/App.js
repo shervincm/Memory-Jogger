@@ -54,9 +54,6 @@ function quizField(){
   return (
 <div className="App">
       <Input handleSubmit={handleSubmit} data={data} setData={setData} />
-      {/* <Form/>
-      <Quiz/>
-      <Display/> */}
       <TestMe data={data} randomInteger={randomInteger} setQuiz={setQuiz}/>
     </div>
   );

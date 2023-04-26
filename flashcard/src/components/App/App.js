@@ -7,7 +7,9 @@ import { useState } from 'react';
 const [input, setInput] = useState('')
 const [quiz, setQuiz] = useState({})
 
-const data = [];
+// const data = [];
+const [data, setData] = useState([])
+
 let randomInteger;
 let titleValue;
 let factValue;
@@ -20,6 +22,8 @@ function giveRandomInteger() {
 
 function handleSubmit() {
   // this function, when called, will add the value of Title and Fact to the end of the data array inside one object
+  setData([...data, {title: titleValue, fact: factValue, uniqueId: data.length}])
+  // we may need to rename uniqueID to key/Key
 }
 
 function handleTitleChange() {

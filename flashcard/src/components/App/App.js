@@ -61,13 +61,17 @@ function App() {
       <div className="App">
         <Input handleSubmit={handleSubmit} data={data} setData={setData} />
         <TestMe data={data} randomInteger={randomInteger} />
-        {quiz && quiz.usertitle && <p>{quiz.usertitle}</p>}
+        {quiz && quiz.usertitle && <p className="quizTitle">{quiz.usertitle}</p>}
+        <br></br>
         {quiz && quiz.fact && <p className="blurry-text">{quiz.fact}</p>}
 
+        <img className="riddler" src = "./Images/Riddler-removebg.png" alt="riddler Photo" ></img>
+        <div className="testMeDiv">
         <button onClick={quizField} className="TestMeBtn">
-          Test Me
-        </button>
-        <button onClick={clearFacts}>Clear Facts</button>
+          Test Me</button>
+        </div>
+        <button onClick={clearFacts} className="clearFactsButton">Clear Facts</button>
+        <div className="logo"></div>
       </div>
     </body>
   );

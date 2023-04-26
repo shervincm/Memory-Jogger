@@ -17,6 +17,7 @@ body{
   padding: 110px;
   background-size: cover;
   overflow: visible;
+  bottom: 500px
 }
 
 .justForm{
@@ -24,16 +25,31 @@ body{
   position: relative;
 
 }
+
+.quiz{
+  background-image: url('/src/Images/notebook.png');
+  background-repeat: no-repeat;
+  z-index: 1;
+  position: absolute;
+  background-size: 600px;
+  overflow: visible;
+  min-height: 300px;
+  max-width: 600px;
+  top: 50%;
+  bottom: 0%;
+  right: 50%;
+  left: 10%;
+}
 .TestMeBtn{
   background-color: #65543F;
   color: white;
+  z-index: 3;
   border-radius: 8px;
-  padding: 10px;
   font-size: medium;
   text-align: center;
   position: fixed;
-  bottom: 4px;
-  right: 5;
+  bottom: 100px;
+  right: 200px;
 }
 
 .blurry-text {

@@ -44,7 +44,7 @@ function TestMe({data, randomInteger}){
     giveRandomInteger();
   }, []);
   return (
-    <div>
+    <div className='quiz'>
     </div>
   );
 }

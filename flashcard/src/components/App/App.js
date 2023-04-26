@@ -2,6 +2,7 @@ import "./App.css";
 import React from "react";
 import Input from "../Input";
 import { useState } from 'react';
+import TestMe from "../Quiz";
 
 function App() {
 
@@ -55,6 +56,7 @@ function quizField(){
       {/* <Form/>
       <Quiz/>
       <Display/> */}
+      <TestMe data={data} randomInteger={randomInteger} setQuiz={setQuiz}/>
     </div>
   );
 }

@@ -2,32 +2,30 @@
   text-align: center;
   /* access desk image in public/Images */
 }
-body{
-  background-image: url('/src/Images/table.png');
+body {
+  background-image: url("/src/Images/table.png");
   background-repeat: no-repeat;
   background-size: cover;
-
 }
 
-.inputForm{
-  background-image: url('/src/Images/notebook.png');
+.inputForm {
+  background-image: url("/src/Images/notebook.png");
   background-repeat: no-repeat;
   z-index: 10;
   position: fixed;
   padding: 110px;
   background-size: cover;
   overflow: visible;
-  bottom: 500px
+  bottom: 500px;
 }
 
-.justForm{
+.justForm {
   padding: 110px;
   position: relative;
-
 }
 
-.quiz{
-  background-image: url('/src/Images/notebook.png');
+.quiz {
+  background-image: url("/src/Images/notebook.png");
   background-repeat: no-repeat;
   z-index: 1;
   position: absolute;
@@ -40,8 +38,8 @@ body{
   right: 50%;
   left: 10%;
 }
-.TestMeBtn{
-  background-color: #65543F;
+.TestMeBtn {
+  background-color: #65543f;
   color: white;
   z-index: 3;
   border-radius: 8px;
@@ -55,10 +53,11 @@ body{
 .blurry-text {
   filter: blur(4px);
   transition: all 0.3s ease;
-  }
-.blurry-text:hover, .blurry-text:focus {
+}
+.blurry-text:hover,
+.blurry-text:focus {
   filter: blur(0);
-  }
+}
 
 p {
   font-size: 1.5em;

@@ -50,7 +50,7 @@ return (
     <Input handleSubmit={handleSubmit} data={data} setData={setData} />
     <TestMe data={data} randomInteger={randomInteger} />
     {quiz && quiz.usertitle && <p>{quiz.usertitle}</p>}
-    {quiz && quiz.fact && <p>{quiz.fact}</p>}
+    {quiz && quiz.fact && <p className='blurry-text'>{quiz.fact}</p>}
     <button onClick={quizField}>Test Me</button>
   </div>
 );

@@ -10,7 +10,7 @@ const [input, setInput] = useState('')
 const [quiz, setQuiz] = useState({})
 
 // const data = [];
-const [data, setData] = useState([])
+const [data, setData] = useState([{title: 'first title', fact: 'first fact', uniqueId: 0}, {title: 'second title', fact: 'second fact', uniqueId: 1}, {title: 'third title', fact: 'third fact', uniqueId: 2}])
 
 let randomInteger;
 

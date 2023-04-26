@@ -24,7 +24,7 @@ function giveRandomInteger() {
 function handleSubmit(title, fact) {
   // this function, when called, will add the value of Title and Fact to the end of the data array inside one object
   console.log('handleSubmit called by Input component');
-  setData([...data, {usertitle: title, userfact: fact, uniqueId: data.length}])
+  setData([...data, {usertitle: title, fact: fact, uniqueId: data.length}])
   // we may need to rename uniqueID to key/Key
   console.log(data);
 }

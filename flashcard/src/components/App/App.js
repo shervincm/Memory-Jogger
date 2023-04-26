@@ -8,7 +8,7 @@ function App() {
 
 // created state for input. Initally set as an empty string
 const [input, setInput] = useState('')
-const [quiz, setQuiz] = useState({})
+const [quiz, setQuiz] = useState({usertitle: '', fact: ''})
 
 // const data = [];
 const [data, setData] = useState([{usertitle: 'first title', fact: 'first fact', uniqueId: 0}, {usertitle: 'second title', fact: 'second fact', uniqueId: 1}, {usertitle: 'third title', fact: 'third fact', uniqueId: 2}])
@@ -29,13 +29,6 @@ function handleSubmit(title, fact) {
   console.log(data);
 }
 
-function handleTitleChange() {
-  // this function will update the value of titleValue
-}
-
-function handleFactChange() {
-  // this function will update the value of factValue
-}
 // function for input value
 function inputField(event){
  
@@ -48,15 +41,19 @@ function inputField(event){
 
 
 function quizField(){
-  setQuiz()
+  giveRandomInteger()
+  setQuiz({usertitle: data[randomInteger].usertitle, fact: data[randomInteger].fact})
 }
 
-  return (
-<div className="App">
-      <Input handleSubmit={handleSubmit} data={data} setData={setData} />
-      <TestMe data={data} randomInteger={randomInteger} setQuiz={setQuiz}/>
-    </div>
-  );
+return (
+  <div className="App">
+    <Input handleSubmit={handleSubmit} data={data} setData={setData} />
+    <TestMe data={data} randomInteger={randomInteger} />
+    {quiz && quiz.usertitle && <p>{quiz.usertitle}</p>}
+    {quiz && quiz.fact && <p>{quiz.fact}</p>}
+    <button onClick={quizField}>Test Me</button>
+  </div>
+);
 }
 
 export default App;

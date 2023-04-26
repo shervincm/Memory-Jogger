@@ -53,7 +53,6 @@ function quizField(){
   return (
 <div className="App">
       <Input handleSubmit={handleSubmit} data={data} setData={setData} />
-      <button onClick={()=>{console.log(data)}}>Click me to see data</button>
       {/* <Form/>
       <Quiz/>
       <Display/> */}

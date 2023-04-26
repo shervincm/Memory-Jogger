@@ -18,8 +18,8 @@ function Input({ handleSubmit, data, setData }) {
 }
 
   return (
-    <div>
-      <form onSubmit={handleClick}>
+    <div className="inputForm">
+      <form onSubmit={handleClick} className="justForm">
         <input required placeholder="Add Title" htmlFor="Title" type="text" value={title} onChange={(e)=> {setTitle(e.target.value)}}></input>
         <br></br>
         <textarea required placeholder="Add Fact" htmlFor="Fact" type="textarea" value={fact} onChange={(e)=> {setFact(e.target.value)}}></textarea>

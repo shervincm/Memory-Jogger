@@ -44,31 +44,24 @@ function clearFacts() {
   
   setData(dummyDataSet);}
 
-// function for input value
-function inputField(event){
- 
-// SAVING IN CASE IT IS NEEDED
-  // set the state to the value of the input 
-  setInput(event.target.value)
-  // create a new array with the spread operator with the value of the input
-  const quizArray = [...input] 
-}
-
-
 function quizField(){
   giveRandomInteger()
   setQuiz({usertitle: data[randomInteger].usertitle, fact: data[randomInteger].fact})
 }
 
 return (
+  <body>
   <div className="App">
     <Input handleSubmit={handleSubmit} data={data} setData={setData} />
     <TestMe data={data} randomInteger={randomInteger} />
     {quiz && quiz.usertitle && <p>{quiz.usertitle}</p>}
     {quiz && quiz.fact && <p className='blurry-text'>{quiz.fact}</p>}
-    <button onClick={quizField}>Test Me</button>
+
+    <button onClick={quizField} className="TestMeBtn">Test Me</button>
     <button onClick={clearFacts}>Clear Facts</button>
+
   </div>
+  </body>
 );
 }
 

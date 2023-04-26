@@ -10,7 +10,7 @@ const [input, setInput] = useState('')
 const [quiz, setQuiz] = useState({})
 
 // const data = [];
-const [data, setData] = useState([{title: 'first title', fact: 'first fact', uniqueId: 0}, {title: 'second title', fact: 'second fact', uniqueId: 1}, {title: 'third title', fact: 'third fact', uniqueId: 2}])
+const [data, setData] = useState([{usertitle: 'first title', fact: 'first fact', uniqueId: 0}, {usertitle: 'second title', fact: 'second fact', uniqueId: 1}, {usertitle: 'third title', fact: 'third fact', uniqueId: 2}])
 
 let randomInteger;
 
@@ -23,8 +23,9 @@ function giveRandomInteger() {
 function handleSubmit(title, fact) {
   // this function, when called, will add the value of Title and Fact to the end of the data array inside one object
   console.log('handleSubmit called by Input component');
-  setData([...data, {title: title, fact: fact, uniqueId: data.length}])
+  setData([...data, {usertitle: title, userfact: fact, uniqueId: data.length}])
   // we may need to rename uniqueID to key/Key
+  console.log(data);
 }
 
 function handleTitleChange() {
@@ -51,7 +52,8 @@ function quizField(){
 
   return (
 <div className="App">
-      <Input handleSubmit={handleSubmit} />
+      <Input handleSubmit={handleSubmit} data={data} setData={setData} />
+      <button onClick={()=>{console.log(data)}}>Click me to see data</button>
       {/* <Form/>
       <Quiz/>
       <Display/> */}

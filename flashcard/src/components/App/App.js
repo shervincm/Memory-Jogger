@@ -17,7 +17,7 @@ function App() {
   const [input, setInput] = useState("");
   const [quiz, setQuiz] = useState({ usertitle: "", fact: "" });
 
-  // const data = [];
+  // the key name links the file name of data to the appID so that the locally stored file is unique to our app and cant be manipulated by other apps using local storage
   let keyName = `data_${appId}`;
 
   const [data, setData] = useState(JSON.parse(localStorage.getItem(keyName)) || dummyDataSet);
@@ -43,7 +43,7 @@ function App() {
 
   function clearFacts() {
     // Clear the "facts" array and remove all stored items from local storage.
-    localStorage.removeItem("data");
+    localStorage.removeItem(keyName);
 
     setData(dummyDataSet);
   }

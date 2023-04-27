@@ -15,13 +15,13 @@ test("renders the webpage", () => {
   expect(linkElement).toBeInTheDocument();
 });
 
-//this one doesn't work
+//Test PASS
 test('adds a fact when the form is submitted', () => {
   render(<App />);
-  const factTitleInput = screen.getByText(/Add Title/);
-  const factInput = screen.getByText(/Add Fact/);
+  const titleInput = screen.getByPlaceholderText(/Add Title/);
+  const factInput = screen.getByPlaceholderText(/Add Fact/);
   const addButton = screen.getByRole('button', { name: /Add Flashcard/i });
-  expect(factTitleInput).toBeInTheDocument();
+  expect(titleInput).toBeInTheDocument();
   expect(factInput).toBeInTheDocument();
   expect(addButton).toBeInTheDocument();
 });
@@ -34,12 +34,61 @@ test('clear facts button is on the page', () => {
   expect(clearFactsButton).toBeInTheDocument();
 });
 
-//test to check if the Clear Facts button clears the facts
-// test('clear facts button clears the facts', () => {
-//   render(<App />);
-//   const clearFactsButton = screen.getByRole('button', { name: /Clear Facts/i });
+//test to check when they click Add Flashcard button, the title and fact are emptied -PASS
+test("when Add Flashcard is clicked, the title and fact get emptied", () => { 
+  render(<App />);
+  const title = screen.getByPlaceholderText(/Add Title/);
+  title.type = "Test Title";
+  const fact = screen.getByPlaceholderText(/Add Fact/);
+  fact.fill = "Test Fact";
+  const addButton = screen.getByRole('button', { name: /Add Flashcard/i });
+  fireEvent.click(addButton);
+  expect(title).toBeEmpty();
+  expect(fact).toBeEmpty();
+});
 
-//   fireEvent.click(clearFactsButton);
+
+//test to check the array changes when the add button is clicked -Test PASS
+test("adds new flashcard object to data array when Add Flashcard button is clicked", () => {
+  render(<App />);
+  // Find the input fields for the flashcard title and fact
+  const titleInput = screen.getByPlaceholderText(/Add Title/);
+  const factInput = screen.getByPlaceholderText(/Add Fact/);
+  // Simulate user input by typing into the input fields
+  fireEvent.change(titleInput, { target: { value: "New Flashcard Title" } });
+  fireEvent.change(factInput, { target: { value: "New Flashcard Fact" } });
+  // Find the "Add Flashcard" button and click it
+  const addFlashcardButton = screen.getByText("Add Flashcard");
+  fireEvent.click(addFlashcardButton);
+  // Check that the new flashcard object has been added to the data array
+  const data = JSON.parse(localStorage.getItem("data"));
+  const newFlashcard = data[data.length - 1];
+  expect(newFlashcard.usertitle).toEqual("New Flashcard Title");
+  expect(newFlashcard.fact).toEqual("New Flashcard Fact");
+});
 
 
-// }
+//test to check clicking Clear Facts button resets the data array PASS
+test("clicking Clear Facts button deletes local storage", () => {
+  render(<App />);
+  // Find the input fields for the flashcard title and fact
+  const titleInput = screen.getByPlaceholderText(/Add Title/);
+  const factInput = screen.getByPlaceholderText(/Add Fact/);
+
+  // Simulate user input by typing into both of the input fields
+  fireEvent.change(titleInput, { target: { value: "New Flashcard Title" } });
+  fireEvent.change(factInput, { target: { value: "New Flashcard Fact" } });
+
+  // Find the "Add Flashcard" button and click it
+  const addFlashcardButton = screen.getByText("Add Flashcard");
+  fireEvent.click(addFlashcardButton);
+  // Check that the local storage has been updated
+  expect(localStorage.getItem("data")).not.toBe(null);
+
+  // Find the "Clear Facts" button and click it
+  const clearFactsButton = screen.getByText("Clear Facts");
+  fireEvent.click(clearFactsButton);
+
+  // Check that the local storage has been deleted
+  expect(localStorage.getItem("data")).toBe(null);
+});

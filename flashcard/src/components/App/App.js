@@ -6,9 +6,9 @@ import TestMe from "../Quiz";
 let appId = "5f9b3b1c9b2c4d0001c3b0a9";
 
 let dummyDataSet = [
-  { usertitle: "UseState", fact: "Allows you to manage state in a functional component. Makes it easier to manage and update state in response to user interactions or other events. Helps keep your component code organized by separating concerns", uniqueId: 0 },
-  { usertitle: "second title", fact: "second fact", uniqueId: 1 },
-  { usertitle: "third title", fact: "third fact", uniqueId: 2 },
+  { usertitle: "useState", fact: "Allows you to manage state in a functional component. Makes it easier to manage and update state in response to user interactions or other events. Helps keep your component code organized by separating concerns", uniqueId: 0 },
+  { usertitle: "useEffect", fact: "Is a React Hook that allows you to perform side effects in a functional component, such as fetching data from an API, updating the DOM, or subscribing to an event, after rendering has occurred.", uniqueId: 1 },
+  { usertitle: "CSS", fact: "CSS, or Cascading Style Sheets, is a language used to describe the presentation of HTML and XML documents.", uniqueId: 2 },
 ];
 
 function App() {
@@ -55,7 +55,7 @@ function App() {
 
   return (
     <div>
-      <div className="header"> Scriptastic 4 Memory Jogger</div>
+      <div className="header"> Scriptastic 4 Memory Jogger </div>
       <div className="App">
         <Input handleSubmit={handleSubmit} data={data} setData={setData} />
         <TestMe data={data} randomInteger={randomInteger} />
@@ -70,7 +70,6 @@ function App() {
           Test Me</button>
         </div>
         <button onClick={clearFacts} className="clearFactsButton">Clear Facts</button>
-        <div className="logo"></div>
       </div>
       
     </div>

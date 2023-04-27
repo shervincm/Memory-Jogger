@@ -136,7 +136,7 @@ p {
 }
 
 .textarea {
-  width: 170px;
+  max-width: 170px;
   height: 150px;
 }
 /* .logo{

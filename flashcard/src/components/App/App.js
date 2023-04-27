@@ -18,7 +18,9 @@ function App() {
   const [quiz, setQuiz] = useState({ usertitle: "", fact: "" });
 
   // const data = [];
-  const [data, setData] = useState(JSON.parse(localStorage.getItem("data")) || dummyDataSet);
+  let keyName = `data_${appId}`;
+
+  const [data, setData] = useState(JSON.parse(localStorage.getItem(keyName)) || dummyDataSet);
 
   let randomInteger;
 
@@ -28,12 +30,12 @@ function App() {
   }
 
   function handleSubmit(title, fact) {
-    const storedData = JSON.parse(localStorage.getItem("data")) || dummyDataSet;
+    const storedData = JSON.parse(localStorage.getItem(keyName)) || dummyDataSet;
 
     // Add the new data to the array
     const updatedData = [ ...storedData,{ usertitle: title, fact: fact, uniqueId: data.length }, ];
 
-    localStorage.setItem("data", JSON.stringify(updatedData));
+    localStorage.setItem(keyName, JSON.stringify(updatedData));
 
     setData(updatedData);
     console.log(updatedData);

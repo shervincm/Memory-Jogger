@@ -10,6 +10,7 @@
 body {
   background-image: url("/src/Images/table.png");
   background-repeat: no-repeat;
+  background-size: cover;
   /* set the background to fill the screen size*/
 }
 

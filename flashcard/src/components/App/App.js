@@ -3,6 +3,7 @@ import React from "react";
 import Input from "../Input";
 import { useState } from "react";
 import TestMe from "../Quiz";
+import logo from "../../Images/logo-nobg.png";
 let appId = "5f9b3b1c9b2c4d0001c3b0a9";
 
 let dummyDataSet = [
@@ -55,6 +56,7 @@ function App() {
 
   return (
     <div>
+    <img src={logo}/>
       <div className="header"> Scriptastic 4 Memory Jogger </div>
       <div className="App">
         <Input handleSubmit={handleSubmit} data={data} setData={setData} />

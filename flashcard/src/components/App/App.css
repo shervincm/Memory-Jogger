@@ -1,58 +1,109 @@
 .App {
   text-align: center;
   /* access desk image in public/Images */
+  display: grid;
+  grid-template-columns: repeat(30, 50px);
+  grid-template-rows: repeat(50, 20px);
+ 
 }
+
 body {
   background-image: url("/src/Images/table.png");
   background-repeat: no-repeat;
   background-size: cover;
+  /* set the background to fill the screen size*/
 }
 
 .inputForm {
   background-image: url("/src/Images/notebook.png");
   background-repeat: no-repeat;
-  z-index: 10;
-  position: fixed;
-  padding: 110px;
-  background-size: cover;
-  overflow: visible;
-  bottom: 500px;
+  display: grid;
+  grid-column: 2 /10;
+  grid-row: 3 / 29;
+  z-index: 5;
+  
 }
 
+.riddler {
+  background-image: url("/src/Images/Riddler-removebg.png");
+  background-repeat: no-repeat;
+  display: grid;
+  grid-column: 14;
+  grid-row: 6 / 10;
+  z-index: 10;
+  width: 300px;
+  height: 300px;
+  border: none;
+   
+}
 .justForm {
   padding: 110px;
   position: relative;
+  margin-left: 50px;
+}
+
+.addMeButton {
+  background-color: #65543f;
+  color: white;
+  font-size: medium;
+  z-index: 5;
+  border-radius: 8px;
 }
 
 .quiz {
   background-image: url("/src/Images/notebook.png");
   background-repeat: no-repeat;
-  z-index: 1;
-  position: absolute;
-  background-size: 600px;
-  overflow: visible;
-  min-height: 300px;
-  max-width: 600px;
-  top: 50%;
-  bottom: 0%;
-  right: 50%;
-  left: 10%;
+  display: grid;
+  grid-column: 12 / 24;
+  grid-row: 3 / 29;
+  z-index: 10;
 }
+
 .TestMeBtn {
+  display: grid;
   background-color: #65543f;
   color: white;
-  z-index: 3;
-  border-radius: 8px;
   font-size: medium;
-  text-align: center;
-  position: fixed;
-  bottom: 100px;
-  right: 200px;
+  z-index: 5;
+  border-radius: 8px;  
+}
+
+.testMeDiv {
+  display: grid;
+  grid-column: 16 /18;
+  grid-row: 23;
+  z-index: 10;
+}
+
+.clearFactsButton {
+  display: grid;
+  grid-column: 6/ 8;
+  grid-row: 23 /24;
+  background-color: #65543f;
+  color: white;
+  font-size: medium;
+  z-index: 7;
+  border-radius: 8px;
+}
+
+.quizDisplay{
+  display: grid;
+  grid-column: 11 / 15;
+  grid-row: 8 / 9;
+  z-index: 11;
+  background-color: #65543f;
+
 }
 
 .blurry-text {
+  display: grid;
+  grid-column: 15 / 19;
+  grid-row: 10/ 22;
+  z-index: 12;
   filter: blur(4px);
-  transition: all 0.3s ease;
+  transition: all 1.0s ease;
+  background-color: #65543f;
+  border-radius: 8px;
 }
 .blurry-text:hover,
 .blurry-text:focus {
@@ -60,10 +111,39 @@ body {
 }
 
 p {
-  font-size: 1.5em;
+  display: grid;
+  grid-column: 15 / 19;
+  grid-row: 8 / 10;
+  z-index: 11;
+  font-size: 17px;
   font-weight: bold;
   color: white;
   text-align: center;
   margin: 0;
   padding: 0;
+  background-color: #65543f;
+  border-radius: 8px;
+  }
+
+.header{
+  color: white;
+  font-size: 2em;
+  padding-left: 20px;
+  padding-top: 20px;
+  display: grid;
+  grid-column: 11 / 15;
+  grid-row: 1 / 2;
 }
+
+.textarea {
+  width: 170px;
+  height: 150px;
+}
+/* .logo{
+  background-image: url("/src/Images/logo.png");
+  background-repeat: no-repeat;
+  display: grid;
+   grid-column: 11 / 19;
+  grid-row: 1 / 15;
+  z-index: 10;
+} */

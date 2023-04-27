@@ -6,7 +6,7 @@ import TestMe from "../Quiz";
 let appId = "5f9b3b1c9b2c4d0001c3b0a9";
 
 let dummyDataSet = [
-  { usertitle: "first title", fact: "first fact", uniqueId: 0 },
+  { usertitle: "UseState", fact: "Allows you to manage state in a functional component. Makes it easier to manage and update state in response to user interactions or other events. Helps keep your component code organized by separating concerns", uniqueId: 0 },
   { usertitle: "second title", fact: "second fact", uniqueId: 1 },
   { usertitle: "third title", fact: "third fact", uniqueId: 2 },
 ];
@@ -30,10 +30,7 @@ function App() {
     const storedData = JSON.parse(localStorage.getItem("data")) || dummyDataSet;
 
     // Add the new data to the array
-    const updatedData = [
-      ...storedData,
-      { usertitle: title, fact: fact, uniqueId: data.length },
-    ];
+    const updatedData = [ ...storedData,{ usertitle: title, fact: fact, uniqueId: data.length }, ];
 
     localStorage.setItem("data", JSON.stringify(updatedData));
 
@@ -57,19 +54,26 @@ function App() {
   }
 
   return (
-    <body>
+    <div>
+      <div className="header"> Scriptastic 4 Memory Jogger</div>
       <div className="App">
         <Input handleSubmit={handleSubmit} data={data} setData={setData} />
         <TestMe data={data} randomInteger={randomInteger} />
-        {quiz && quiz.usertitle && <p>{quiz.usertitle}</p>}
-        {quiz && quiz.fact && <p className="blurry-text">{quiz.fact}</p>}
-
+        {quiz && quiz.usertitle && 
+                  <p className="quizTitle">{quiz.usertitle}</p>}
+          <br></br>
+          {quiz && quiz.fact && <p className="blurry-text">{quiz.fact}</p>}
+        
+        <div className="riddler" /*src = "../../Images/Riddler-removebg.png" alt="riddler Photo"*/ ></div>
+        <div className="testMeDiv">
         <button onClick={quizField} className="TestMeBtn">
-          Test Me
-        </button>
-        <button onClick={clearFacts}>Clear Facts</button>
+          Test Me</button>
+        </div>
+        <button onClick={clearFacts} className="clearFactsButton">Clear Facts</button>
+        <div className="logo"></div>
       </div>
-    </body>
+      
+    </div>
   );
 }
 

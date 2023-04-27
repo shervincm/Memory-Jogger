@@ -32,7 +32,7 @@ function Input({ handleSubmit, data, setData }) {
           }}
         ></input>
         <br></br>
-        <textarea
+        <textarea className = "textarea"
           required
           placeholder="Add Fact"
           htmlFor="Fact"

@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import {test, expect} from "@jest/globals";
+import { test, expect } from "@jest/globals";
 
 import App from "./App";
 
@@ -8,48 +8,41 @@ import App from "./App";
 //Act
 //Assert
 
-//renders the webpage and checks for the word flashcard- test PASS
-test("renders the webpage", () => {
+test("The webpage renders and the word flashcard is in the document", () => {
   render(<App />);
   const linkElement = screen.getByText(/flashcard/i);
   expect(linkElement).toBeInTheDocument();
 });
 
-//Test PASS
-test('adds a fact when the form is submitted', () => {
+test("The two input boxes and the Add Flashcard button are on the screen", () => {
   render(<App />);
   const titleInput = screen.getByPlaceholderText(/Add Title/);
   const factInput = screen.getByPlaceholderText(/Add Fact/);
-  const addButton = screen.getByRole('button', { name: /Add Flashcard/i });
+  const addButton = screen.getByRole("button", { name: /Add Flashcard/i });
   expect(titleInput).toBeInTheDocument();
   expect(factInput).toBeInTheDocument();
   expect(addButton).toBeInTheDocument();
 });
 
-
-//test to check if the clear facts button is on the page -PASS
-test('clear facts button is on the page', () => {
+test("The Clear Facts button is on the page", () => {
   render(<App />);
-  const clearFactsButton = screen.getByRole('button', { name: /Clear Facts/i });
+  const clearFactsButton = screen.getByRole("button", { name: /Clear Facts/i });
   expect(clearFactsButton).toBeInTheDocument();
 });
 
-//test to check when they click Add Flashcard button, the title and fact are emptied -PASS
-test("when Add Flashcard is clicked, the title and fact get emptied", () => { 
+test("When Add Flashcard is clicked, the title and fact boxes get emptied", () => {
   render(<App />);
   const title = screen.getByPlaceholderText(/Add Title/);
   title.type = "Test Title";
   const fact = screen.getByPlaceholderText(/Add Fact/);
   fact.fill = "Test Fact";
-  const addButton = screen.getByRole('button', { name: /Add Flashcard/i });
+  const addButton = screen.getByRole("button", { name: /Add Flashcard/i });
   fireEvent.click(addButton);
   expect(title).toBeEmpty();
   expect(fact).toBeEmpty();
 });
 
-
-//test to check the array changes when the add button is clicked and also tests to see if its the same after page refresh -Test PASS
-test("adds new flashcard object to data array when Add Flashcard button is clicked and also tests to see if its the same after page refresh", () => {
+test("Adds new flashcard object to data array when Add Flashcard button is clicked and also tests to see if the data array is the same after page refresh", () => {
   render(<App />);
   // Find the input fields for the flashcard title and fact
   const titleInput = screen.getByPlaceholderText(/Add Title/);
@@ -61,21 +54,19 @@ test("adds new flashcard object to data array when Add Flashcard button is click
   const addFlashcardButton = screen.getByText("Add Flashcard");
   fireEvent.click(addFlashcardButton);
   // Check that the new flashcard object has been added to the data array
-  const data = JSON.parse(localStorage.getItem("data_5f9b3b1c9b2c4d0001c3b0a9"));
+  const data = JSON.parse(
+    localStorage.getItem("data_5f9b3b1c9b2c4d0001c3b0a9")
+  );
   const newFlashcard = data[data.length - 1];
   expect(newFlashcard.usertitle).toEqual("New Flashcard Title");
   expect(newFlashcard.fact).toEqual("New Flashcard Fact");
-
   //page refresh
   window.location.reload();
   expect(newFlashcard.usertitle).toEqual("New Flashcard Title");
   expect(newFlashcard.fact).toEqual("New Flashcard Fact");
-
 });
 
-
-//test to check clicking Clear Facts button resets the data array PASS
-test("clicking Clear Facts button deletes local storage", () => {
+test("Clicking Clear Facts button deletes local storage, resetting the array back to its default contents", () => {
   render(<App />);
   // Find the input fields for the flashcard title and fact
   const titleInput = screen.getByPlaceholderText(/Add Title/);
@@ -105,10 +96,10 @@ test("clicking Clear Facts button deletes local storage", () => {
 //   render(<App />);
 //   const testMeButton = screen.getByRole('button', { name: /Test Me/i });
 //   fireEvent.click(testMeButton);
-  
+
 //   // Find all <p> elements and filter the results to select the ones we need
 //   const allPElements = screen.queryAllByRole("paragraph");
-  
+
 //   // Check that at least one <p> element is displayed
 //   expect(allPElements[0]).toBeVisible();
 // });

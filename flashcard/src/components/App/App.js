@@ -17,8 +17,10 @@ function App() {
   const [input, setInput] = useState("");
   const [quiz, setQuiz] = useState({ usertitle: "", fact: "" });
 
-  // const data = [];
-  const [data, setData] = useState(JSON.parse(localStorage.getItem("data")) || dummyDataSet);
+  // the key name links the file name of data to the appID so that the locally stored file is unique to our app and cant be manipulated by other apps using local storage
+  let keyName = `data_${appId}`;
+
+  const [data, setData] = useState(JSON.parse(localStorage.getItem(keyName)) || dummyDataSet);
 
   let randomInteger;
 
@@ -28,12 +30,12 @@ function App() {
   }
 
   function handleSubmit(title, fact) {
-    const storedData = JSON.parse(localStorage.getItem("data")) || dummyDataSet;
+    const storedData = JSON.parse(localStorage.getItem(keyName)) || dummyDataSet;
 
     // Add the new data to the array
     const updatedData = [ ...storedData,{ usertitle: title, fact: fact, uniqueId: data.length }, ];
 
-    localStorage.setItem("data", JSON.stringify(updatedData));
+    localStorage.setItem(keyName, JSON.stringify(updatedData));
 
     setData(updatedData);
     console.log(updatedData);
@@ -41,7 +43,7 @@ function App() {
 
   function clearFacts() {
     // Clear the "facts" array and remove all stored items from local storage.
-    localStorage.removeItem("data");
+    localStorage.removeItem(keyName);
 
     setData(dummyDataSet);
   }

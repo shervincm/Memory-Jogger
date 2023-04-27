@@ -2,9 +2,9 @@
   text-align: center;
   /* access desk image in public/Images */
   display: grid;
-  grid-template-columns: repeat(20, 40px);
-  grid-template-rows: repeat(25, 20px);
-  grid-gap: 20px
+  grid-template-columns: repeat(30, 50px);
+  grid-template-rows: repeat(50, 20px);
+ 
 }
 
 body {
@@ -17,12 +17,24 @@ body {
   background-image: url("/src/Images/notebook.png");
   background-repeat: no-repeat;
   display: grid;
-  grid-column: 2 /9;
-  grid-row: 3 / 15;
+  grid-column: 2 /10;
+  grid-row: 3 / 29;
   z-index: 5;
   
 }
 
+.riddler {
+  background-image: url("/src/Images/Riddler-removebg.png");
+  background-repeat: no-repeat;
+  display: grid;
+  grid-column: 14;
+  grid-row: 6 / 10;
+  z-index: 10;
+  width: 300px;
+  height: 300px;
+  border: none;
+   
+}
 .justForm {
   padding: 110px;
   position: relative;
@@ -41,8 +53,8 @@ body {
   background-image: url("/src/Images/notebook.png");
   background-repeat: no-repeat;
   display: grid;
-  grid-column: 9 / 18;
-  grid-row: 3 / 15;
+  grid-column: 12 / 24;
+  grid-row: 3 / 29;
   z-index: 10;
 }
 
@@ -57,15 +69,15 @@ body {
 
 .testMeDiv {
   display: grid;
-  grid-column: 12 / 14;
-  grid-row: 13 / 13;
+  grid-column: 16 /18;
+  grid-row: 23;
   z-index: 10;
 }
 
 .clearFactsButton {
   display: grid;
   grid-column: 5/ 7;
-  grid-row: 13 / 14;
+  grid-row: 23 /24;
   background-color: #65543f;
   color: white;
   font-size: medium;
@@ -73,22 +85,24 @@ body {
   border-radius: 8px;
 }
 
-.riddler {
+.quizDisplay{
   display: grid;
-  grid-column: 12 / 14;
-  grid-row: 6 / 10;
-  color: white;
-  z-index: 10;
+  grid-column: 11 / 15;
+  grid-row: 8 / 9;
+  z-index: 11;
+  background-color: #65543f;
 
 }
 
 .blurry-text {
   display: grid;
-  grid-column: 11 / 15;
-  grid-row: 9 / 10;
+  grid-column: 15 / 19;
+  grid-row: 10/ 12;
   z-index: 12;
   filter: blur(4px);
   transition: all 1.0s ease;
+  background-color: #65543f;
+  border-radius: 8px;
 }
 .blurry-text:hover,
 .blurry-text:focus {
@@ -97,17 +111,33 @@ body {
 
 p {
   display: grid;
-  grid-column: 11 / 15;
-  grid-row: 8 / 9;
-  z-index: 10;
+  grid-column: 15 / 19;
+  grid-row: 8 / 10;
+  z-index: 11;
   font-size: 1.5em;
   font-weight: bold;
   color: white;
   text-align: center;
   margin: 0;
   padding: 0;
+  background-color: #65543f;
+  border-radius: 8px;
+  }
+
+.header{
+  color: white;
+  font-size: 2em;
+  padding-left: 20px;
+  padding-top: 20px;
+  display: grid;
+  grid-column: 11 / 15;
+  grid-row: 1 / 2;
 }
 
+.textarea {
+  width: 170px;
+  height: 150px;
+}
 /* .logo{
   background-image: url("/src/Images/logo.png");
   background-repeat: no-repeat;

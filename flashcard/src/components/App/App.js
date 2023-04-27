@@ -17,7 +17,7 @@ function App() {
   const [quiz, setQuiz] = useState({ usertitle: "", fact: "" });
 
   // const data = [];
-  const [data, setData] = useState(dummyDataSet);
+  const [data, setData] = useState(JSON.parse(localStorage.getItem("data")) || dummyDataSet);
 
   let randomInteger;
 

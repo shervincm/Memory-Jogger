@@ -1,25 +1,22 @@
 .App {
-  text-align: center;
+  
   /* access desk image in public/Images */
   display: grid;
   grid-template-columns: repeat(30, 50px);
   grid-template-rows: repeat(50, 20px);
- 
-}
-
-body {
   background-image: url("/src/Images/table.png");
   background-repeat: no-repeat;
   background-size: cover;
-  /* set the background to fill the screen size*/
 }
+
+
 
 .inputForm {
   background-image: url("/src/Images/notebook.png");
   background-repeat: no-repeat;
   display: grid;
   grid-column: 2 /10;
-  grid-row: 3 / 29;
+  grid-row: 6 / 29;
   z-index: 5;
   
 }
@@ -29,7 +26,7 @@ body {
   background-repeat: no-repeat;
   display: grid;
   grid-column: 14;
-  grid-row: 6 / 10;
+  grid-row: 9 / 10;
   z-index: 10;
   width: 300px;
   height: 300px;
@@ -38,7 +35,9 @@ body {
 }
 .justForm {
   padding: 110px;
-  position: relative;
+  padding-top: 76px;
+  display: grid;
+  grid-row: 3 / 9;
   margin-left: 50px;
 }
 
@@ -55,7 +54,7 @@ body {
   background-repeat: no-repeat;
   display: grid;
   grid-column: 12 / 24;
-  grid-row: 3 / 29;
+  grid-row: 6 / 29;
   z-index: 10;
 }
 
@@ -71,14 +70,14 @@ body {
 .testMeDiv {
   display: grid;
   grid-column: 16 /18;
-  grid-row: 23;
+  grid-row: 26;
   z-index: 10;
 }
 
 .clearFactsButton {
   display: grid;
   grid-column: 6/ 8;
-  grid-row: 23 /24;
+  grid-row: 26 /27;
   background-color: #65543f;
   color: white;
   font-size: medium;
@@ -89,7 +88,7 @@ body {
 .quizDisplay{
   display: grid;
   grid-column: 11 / 15;
-  grid-row: 8 / 9;
+  grid-row: 18/ 23;
   z-index: 11;
   background-color: #65543f;
 
@@ -98,7 +97,7 @@ body {
 .blurry-text {
   display: grid;
   grid-column: 15 / 19;
-  grid-row: 10/ 22;
+  grid-row: 13/ 25;
   z-index: 12;
   filter: blur(4px);
   transition: all 1.0s ease;
@@ -113,7 +112,7 @@ body {
 p {
   display: grid;
   grid-column: 15 / 19;
-  grid-row: 8 / 10;
+  grid-row: 10 / 12;
   z-index: 11;
   font-size: 17px;
   font-weight: bold;
@@ -129,15 +128,24 @@ p {
   color: white;
   font-size: 2em;
   padding-left: 20px;
-  padding-top: 20px;
   display: grid;
-  grid-column: 11 / 15;
+  grid-column: 1/ 15;
   grid-row: 1 / 2;
+  padding-top: 10px;
+}
+
+img{
+  display: grid;
+  grid-column: 23;
+  grid-row: 1/2;
+  height: 110px;
+  width: auto;
 }
 
 .textarea {
   max-width: 170px;
-  height: 150px;
+  height: 170px;
+  margin-bottom: 0px;
 }
 /* .logo{
   background-image: url("/src/Images/logo.png");

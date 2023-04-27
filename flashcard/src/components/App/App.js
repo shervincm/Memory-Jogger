@@ -56,9 +56,9 @@ function App() {
 
   return (
     <div>
-    <img src={logo}/>
-      <div className="header"> Scriptastic 4 Memory Jogger </div>
       <div className="App">
+      <div className="header"> Scriptastic 4 Memory Jogger </div>
+      <img src={logo}/>
         <Input handleSubmit={handleSubmit} data={data} setData={setData} />
         <TestMe data={data} randomInteger={randomInteger} />
         {quiz && quiz.usertitle && 
@@ -75,6 +75,7 @@ function App() {
       </div>
       
     </div>
+    
   );
 }
 

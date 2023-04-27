@@ -61,7 +61,7 @@ test("adds new flashcard object to data array when Add Flashcard button is click
   const addFlashcardButton = screen.getByText("Add Flashcard");
   fireEvent.click(addFlashcardButton);
   // Check that the new flashcard object has been added to the data array
-  const data = JSON.parse(localStorage.getItem("data"));
+  const data = JSON.parse(localStorage.getItem("data_5f9b3b1c9b2c4d0001c3b0a9"));
   const newFlashcard = data[data.length - 1];
   expect(newFlashcard.usertitle).toEqual("New Flashcard Title");
   expect(newFlashcard.fact).toEqual("New Flashcard Fact");
@@ -90,14 +90,14 @@ test("clicking Clear Facts button deletes local storage", () => {
   fireEvent.click(addFlashcardButton);
 
   // Check that the local storage has been updated
-  expect(localStorage.getItem("data")).not.toBe(null);
+  expect(localStorage.getItem("data_5f9b3b1c9b2c4d0001c3b0a9")).not.toBe(null);
 
   // Find the "Clear Facts" button and click it
   const clearFactsButton = screen.getByText("Clear Facts");
   fireEvent.click(clearFactsButton);
 
   // Check that the local storage has been deleted
-  expect(localStorage.getItem("data")).toBe(null);
+  expect(localStorage.getItem("data_5f9b3b1c9b2c4d0001c3b0a9")).toBe(null);
 });
 
 // once test me button is clicked, the flashcard(<p></p>) is displayed - NOT WORKING YET -come back if have time

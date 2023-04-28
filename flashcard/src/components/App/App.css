@@ -9,8 +9,6 @@
   background-size: cover;
 }
 
-
-
 .inputForm {
   background-image: url("/src/Images/notebook.png");
   background-repeat: no-repeat;
@@ -44,6 +42,7 @@
 
 input {
   border-radius: 8px;
+  border: none;
 }
 
 .addMeButton {
@@ -153,6 +152,7 @@ img{
   height: 170px;
   margin-bottom: 0px;
   border-radius: 8px;
+  border: none;
 }
 /* .logo{
   background-image: url("/src/Images/logo.png");

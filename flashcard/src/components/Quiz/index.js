@@ -32,6 +32,7 @@ function TestMe({data, setQuiz, quiz}){
 export default TestMe; */
 
 import React, { useState, useEffect } from "react";
+
 function TestMe({ data, randomInteger }) {
   function handleClick() {
     giveRandomInteger();
@@ -43,6 +44,15 @@ function TestMe({ data, randomInteger }) {
   useEffect(() => {
     giveRandomInteger();
   }, []);
+
   return <div className="quiz"></div>;
 }
 export default TestMe;
+
+
+
+
+
+
+
+

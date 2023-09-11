@@ -1,3 +1,3 @@
 # frontend-project
 
-testingtesting123 - Gregor
+A memory jogger app to help with revision and learning.
